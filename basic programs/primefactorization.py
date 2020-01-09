@@ -5,8 +5,6 @@ lst = []
 for i in range(lower,upper):
     if num%i==0:
         lst.append(i)
-print("factors between", lower, "and", upper, "are:")
-print(lst)
 k=0
 print("Prime factors between", lower, "and", upper, "are:")
 for k in range(0,len(lst)): 
