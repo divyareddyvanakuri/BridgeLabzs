@@ -12,7 +12,7 @@ def coinflips(tries):
             hcount += 1
         else:
             tcount += 1
-    phead = hcount/ flips*100
+    phead = round(hcount/ flips*100,3)
     ptail = 100-phead
     print("Total no of flips:",flips)
     print("percentage of head:",phead)
