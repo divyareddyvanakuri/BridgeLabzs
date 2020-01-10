@@ -11,6 +11,6 @@ class tconversion:
         return round((self.temprature - 32)*5/9,3)
 t = tconversion(int(input("enter temprature value:")))
 if option == 1:
-    print("convert from celsius to fahranheit:",t.fcon())
+    print("Temprature:",t.fcon(),"degrees fahranheit")
 else:
-    print("convert form fahranheit to celsius:",t.ccon())
+    print("Temprature:",t.ccon(),"degrees celsius")
