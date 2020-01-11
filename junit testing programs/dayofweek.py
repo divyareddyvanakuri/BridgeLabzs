@@ -1,3 +1,3 @@
 import datetime
-day = datetime.date(2020,1,10).weekday()
-print("weekday():", day)
+def DayOfWeek(y,m,d):
+    return datetime.date(y,m,d).weekday()
