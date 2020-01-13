@@ -7,7 +7,7 @@ for i in a[::-1]:
     for j in atm:
         if money//i!=0:
             j += 1
-            print(i,":",j)s
+            print(i,":",j)
             money -= i
             flog = 1
             
