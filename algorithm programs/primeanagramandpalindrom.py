@@ -1,5 +1,5 @@
-lower = 0
-upper = 100
+lower = int(input("enter lower range value:"))
+upper = int(input("enter lower range value:"))
 my_list=[]
 for val in range(lower,upper+1):
     if val>1:
