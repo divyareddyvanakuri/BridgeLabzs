@@ -1,4 +1,3 @@
-
 #node object class
 my_list = []
 with open("text","r") as f:
@@ -37,11 +36,33 @@ class linked_list:
             else:
                 temp_node = temp_node.next
         return Found
+    def del_node(self,item):
+        self.count -= 1
+        temp_node = self.head
+        previous = None
+        Found = False
+        while  not Found:
+            if temp_node.data == item:
+                Found = True
+            else:
+                previous = temp_node
+                temp_node = temp_node.next
+        if temp_node.next==None:
+            self.head = temp_node.next
+        else:
+            previous.next = temp_node.next
+    def count_Node(self):
+        print(self.count)
+
 mylist=linked_list()
 for data in my_list:
     mylist.add_node(data)
 mylist.traverse()
-print(mylist.search("like"))
-
-
-    
+word = input("enter key word:")
+if mylist.search(word)==False:
+    mylist.add_node(word)
+else:
+    mylist.del_node(word)
+mylist.traverse()
+mylist.count_Node()
+ 
