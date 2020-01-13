@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.insert(0,'\home\user\Desktop\programming\junit testing programs')
+sys.path.append('/home/user/Desktop/programming/junit testing programs')
 import tobinary
 class Binaryconversion(unittest.TestCase):
     def test_Tobinary(self):
