@@ -61,8 +61,12 @@ mylist.traverse()
 word = input("enter key word:")
 if mylist.search(word)==False:
     mylist.add_node(word)
+    with open("text","a") as f:
+        my_list = f.write(" "+word)
 else:
     mylist.del_node(word)
-mylist.traverse()
+    for i in range(len(my_list)-1):
+        if my_list[i] == word:
+            del my_list[i] 
 mylist.count_Node()
- 
+print(my_list)
