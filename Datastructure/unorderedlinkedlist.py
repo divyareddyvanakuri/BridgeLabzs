@@ -68,5 +68,8 @@ else:
     for i in range(len(my_list)-1):
         if my_list[i] == word:
             del my_list[i] 
+    with open('text', 'w') as f:
+        for listitem in my_list:
+            f.write('%s\n' % listitem)
 mylist.count_Node()
 print(my_list)
