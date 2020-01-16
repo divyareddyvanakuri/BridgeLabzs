@@ -15,14 +15,20 @@ class Deque:
         return len(self.deque)
     def get_deque(self):
         return self.deque
-string = "Divya"
+    def palindrome_checker(self):
+        return self.deque[0:]==self.deque[::-1]
+
 mydeque = Deque()
+print(mydeque.isEmpty())
+string = input("enter a string:")
 for i in range(len(string)-1,-1,-1):
     mydeque.addFront(string[i])
 print(mydeque.get_deque())
+print(mydeque.palindrome_checker())
 mydeque.addRear(2,'g')
 print(mydeque.get_deque())
 mydeque.removeFront()
 print(mydeque.get_deque())
-print(mydeque.isEmpty())
+mydeque.removeRear('g')
+print(mydeque.get_deque())
 print(mydeque.Size())
