@@ -36,21 +36,21 @@ class linked_list:
             else:
                 temp_node = temp_node.next
         return Found
-    def del_node(self,item):
+    def del_node(self,item,index=None):
         self.count -= 1
         temp_node = self.head
-        previous = None
+        self.index = index
         Found = False
         while  not Found:
             if temp_node.data == item:
                 Found = True
             else:
-                previous = temp_node
+                self.index = temp_node
                 temp_node = temp_node.next
         if temp_node.next==None:
             self.head = temp_node.next
         else:
-            previous.next = temp_node.next
+            self.index= temp_node.next
     def count_Node(self):
         print(self.count)
 
@@ -65,7 +65,7 @@ if mylist.search(word)==False:
         my_list = f.write(" "+word)
 else:
     mylist.del_node(word)
-    for i in range(len(my_list)-1):
+    for i in range(len(my_list)):
         if my_list[i] == word:
             del my_list[i] 
     with open('text', 'w') as f:
