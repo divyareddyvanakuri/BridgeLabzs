@@ -1,0 +1,29 @@
+import sys
+sys.path.append("/home/user/Desktop/programming/Datastructure")
+from DatastructureUtility import utilityofqueueusinglinkedlist
+lower = int(input("Enter lower range value:"))
+upper = int(input("Enter upper range value:"))
+def primeanagrams(lower,upper):
+        prime_list=[]
+        for val in range(lower,upper+1):
+            if val>1:
+                for n in range(2,val):
+                    if (val%n) == 0:
+                        break
+                else:
+                    prime_list.append(val)
+        anagram_list=[]
+        for i in prime_list:
+            for j in prime_list:
+                if i != j and sorted(str(i))==sorted(str(j)):
+                    anagram_list.append(i) 
+        return set(anagram_list)
+mylist=list(primeanagrams(lower,upper))
+mylist.sort()
+mylinkedlist = utilityofqueueusinglinkedlist.queuelinkedlist()
+print("Linked list is Empty:",mylinkedlist.isEmpty())
+for item in mylist:
+    mylinkedlist.add_node(item)
+mylinkedlist.pop()
+mylinkedlist.traverse()
+print("count of Nodes is:",mylinkedlist.size())
