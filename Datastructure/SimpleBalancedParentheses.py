@@ -19,4 +19,3 @@ else:
     print("unbalanced")
     print(mystack.peek())
     print(mystack.get_stack())
-                
