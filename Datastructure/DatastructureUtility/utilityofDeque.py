@@ -1,0 +1,19 @@
+class utility:
+    def __init__(self,deque=[]):
+        self.deque=deque
+    def addFront(self,item):
+        self.deque.insert(0,item)
+    def addRear(self,pos,item):
+        self.deque.insert(pos,item)
+    def removeFront(self):
+        del self.deque[0]
+    def removeRear(self,item):
+        self.deque.remove(item)
+    def isEmpty(self):
+        return self.deque==[]
+    def Size(self):
+        return len(self.deque)
+    def get_deque(self):
+        return self.deque
+    def palindrome_checker(self):
+        return self.deque[0:]==self.deque[::-1]
