@@ -1,4 +1,4 @@
-from Node import  Node
+from utilityofnode import  Node
 class  utility:
     def __init__(self,head=None,size=0):
         self.head=head

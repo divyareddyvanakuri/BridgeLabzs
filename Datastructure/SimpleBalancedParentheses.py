@@ -1,20 +1,8 @@
-class Stack:
-    def __init__(self,stack=[]):
-        self.stack=stack
-    def push(self,item):
-        self.stack.append(item)
-    def Pop(self):
-        self.stack.pop()
-    def is_empty(self):
-        return self.stack ==[]
-    def peek(self):
-        if not self.is_empty():
-            return self.stack[-1]
-    def get_stack(self):
-        return self.stack
-    def size(self):
-        return len(self.stack)
-mystack = Stack()
+import sys
+sys.path.append("/home/user/Desktop/programming/Datastructure")
+from DatastructureUtility import utilityofstack
+
+mystack = utilityofstack.utility()
 a = input("Take Any Arithmetic Expression or Parentheses Expression:")
 print("Input:",a)
 open_list = ["(","[","{"]
@@ -30,5 +18,5 @@ if mystack.is_empty():
 else:
     print("unbalanced")
     print(mystack.peek())
-print(mystack.get_stack())
+    print(mystack.get_stack())
                 

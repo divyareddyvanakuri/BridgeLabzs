@@ -1,36 +1,27 @@
-class Queue():
-    def __init__(self,queue=[]*6,cash=[0]*6):
-        self.queue=queue
-        self.cash=cash
-    def enqueue(self,item):
-        self.queue.append(item)
-    def dequeue(self):
-        del self.queue[0]
-    def get_queue(self):
-        return self.queue
-    def isEmpty(self):
-        return self.queue==[]
-    def size(self):
-        return len(self.queue)
-    def cash_withdraw(self,amount,pos):
-        self.amount=amount
-        self.pos=pos
-        if 100<amount<self.cash[pos]:
-            self.cash[self.pos] -= self.amount
-            print("Balance Amount")
-            print(self.queue[self.pos],":",self.cash[pos])
-        else:
-            print("Ensure about amount of Money in your Account")
-            print(self.queue[pos],":",self.cash[pos])
-    def cash_Deposit(self,amount,pos):
-        self.amount=amount
-        self.pos=pos
-        self.cash[self.pos] += self.amount
+import sys
+sys.path.append("/home/user/Desktop/programming/Datastructure")
+from DatastructureUtility import utilityofqueue
+def cash_withdraw(self,amount,pos=0):
+    self.amount=amount
+    self.pos=pos
+    if 100<amount<self.cash[pos]:
+        self.cash[self.pos] -= self.amount
         print("Balance Amount")
         print(self.queue[self.pos],":",self.cash[pos])
-        
-
-myqueue = Queue()
+    else:
+        print("Ensure about amount of Money in your Account")
+        print(self.queue[pos],":",self.cash[pos])
+def cash_Deposit(self,amount,pos=0):
+    self.amount=amount
+    self.pos=pos
+    self.cash[self.pos] += self.amount
+    print("Balance Amount")
+    print(self.queue[self.pos],":",self.cash[pos])
+def createAmount():
+    # This function returns True if the player wants to play again, otherwise it returns False.
+    print('Do you want to create a New amount in our Bank? (yes or no)')
+    return input().lower().startswith('y')
+myqueue = utilityofqueue.utility()
 print(myqueue.isEmpty())
 Names = ["kai","suho"]
 for i in range(len(Names)):
@@ -38,6 +29,7 @@ for i in range(len(Names)):
 print(myqueue.size())
 print(myqueue.get_queue())
 customer_name = input("enter name:")
+
 if customer_name in myqueue.get_queue():
     pos = Names.index(customer_name)
     print("Cash Counter Menu:")
@@ -45,10 +37,15 @@ if customer_name in myqueue.get_queue():
     print(" 2.cash deposit")
     option = int(input("select option:"))
     if option == 1:
-        amount =  float(input("enter amount of money to withdraw:"))
-        myqueue.cash_withdraw(amount,pos)
+        amount =  int(input("enter amount of money to withdraw:"))
+        cash_withdraw(amount,pos)
     elif option == 2:
-        amount =  float(input("enter amount of money to deposit:"))
-        myqueue.cash_Deposit(amount,pos)
+        amount =  int(input("enter amount of money to deposit:"))
+        cash_Deposit(amount,pos)
 else:
     print("ensure about user name")
+    if createAmount()==True:
+        Names.append(customer_name)
+        amount =  int(input("enter amount of money to deposit:"))
+        cash_Deposit(amount,pos)
+myqueue.dequeue()
