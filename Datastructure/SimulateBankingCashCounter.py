@@ -35,6 +35,7 @@ if customer_name in myqueue.get_queue():
     print("Cash Counter Menu:")
     print(" 1.cash withdraw")
     print(" 2.cash deposit")
+    print(" 3.Delet amount")
     option = int(input("select option:"))
     if option == 1:
         amount =  int(input("enter amount of money to withdraw:"))
@@ -42,6 +43,8 @@ if customer_name in myqueue.get_queue():
     elif option == 2:
         amount =  int(input("enter amount of money to deposit:"))
         cash_Deposit(amount,pos)
+    else:
+        Names.remove(customer_name)
 else:
     print("ensure about user name")
     if createAmount()==True:
