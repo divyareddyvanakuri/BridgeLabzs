@@ -7,9 +7,12 @@ days =["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sund
 print(days[dayNumber])
 months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
 noofdays = [31,28,31,30,31,30,31,31,30,31,30,31]
-
-month_index= months.index(month)
+if calendar.isleap(year)== True:
+    noofdays[1]=29
+Month = months[month-1]
+month_index= months.index(Month)
 noofday = noofdays[month_index]
+
 calendar_2D=[[days],
             [" "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "],
@@ -30,4 +33,4 @@ while k!=6 and not Found:
     dayNumber = 0
     z = number
     k += 1
-print("calendar of {0} {1} : {2}".format(month,year,calendar_2D))
+print("calendar of {0} {1} : {2}".format(Month,year,calendar_2D))
