@@ -8,11 +8,10 @@ for number in range(lower,upper):
                 break
         else:
            mylist.append(number)
-#print(mylist)
 
 TwoDArray_primenumbers = [[x for x in range(100) if x in mylist],[x for x in range(100,200) if x in mylist],
     [x for x in range(200,300) if x in mylist],[x for x in range(300,400) if x in mylist],
     [x for x in range(400,500) if x in mylist],[x for x in range(500,600) if x in mylist],
     [x for x in range(600,700) if x in mylist],[x for x in range(800,900) if x in mylist],
     [x for x in range(900,1000) if x in mylist]]
-print(TwoDArray_primenumbers)
+print("the prime numbers in a 2D Array a range of 0 - 1000 Numbers:",TwoDArray_primenumbers)
