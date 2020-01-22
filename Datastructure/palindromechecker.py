@@ -12,7 +12,7 @@ print("Given string size:",mydeque.Size())
 mydeque.addRear(0,'g')
 mydeque.removeRear('g')
 print(mydeque.get_deque())
-if mydeque.palindrome_checker()==True:
+if mydeque.palindrome_checker() is True:
     print("Given string is a palindrome")
 else:
     print("Given string is not a palindrome")
