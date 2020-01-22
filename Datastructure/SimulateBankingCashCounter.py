@@ -50,5 +50,8 @@ else:
     if createAmount()==True:
         Names.append(customer_name)
         amount =  int(input("enter amount of money to deposit:"))
+        pos = len(customer_name)+1
         cash_Deposit(amount,pos)
+        myqueue.enqueue(customer_name)
 myqueue.dequeue()
+print(myqueue.get_queue())
