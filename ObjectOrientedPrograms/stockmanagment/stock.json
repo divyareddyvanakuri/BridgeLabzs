@@ -1,0 +1,24 @@
+{
+    "Stocks": [
+        {
+            "shareName": "Ashok Leyland",
+            "numberOfShares": 10,
+            "sharePrice": 2000
+        },
+        {
+            "shareName": "Bajaj Auto",
+            "numberOfShares": 85,
+            "sharePrice": 411111
+        },
+        {
+            "shareName": "Force Motors",
+            "numberOfShares": 45,
+            "sharePrice": 5456767
+        },
+        {
+            "shareName": "Tata Motors",
+            "numberOfShares": 18,
+            "sharePrice": 207890
+        }
+    ]
+}
