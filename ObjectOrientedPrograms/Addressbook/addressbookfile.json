@@ -1,0 +1,31 @@
+{
+  "persons": [
+    {
+      "firstname": "kai",
+      "lastname": "hygun",
+      "address": "10-3",
+      "city": "seoul",
+      "state": "Southkorea",
+      "zipcode": "678",
+      "phonenumber": "567900"
+    },
+    {
+      "firstname": "chanyeol",
+      "lastname": "hygun",
+      "address": "3-20",
+      "city": "jsuisland",
+      "state": "sounthkorea",
+      "zipcode": "645",
+      "phonenumber": "577809"
+    },
+    {
+      "firstname": "beakyun",
+      "lastname": "hygun",
+      "address": "20/5",
+      "city": "jsuisland",
+      "state": "sounthkorea",
+      "zipcode": "350",
+      "phonenumber": "57990"
+    }
+  ]
+}
