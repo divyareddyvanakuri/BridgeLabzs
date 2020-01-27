@@ -2,7 +2,6 @@ import json
 from personcls import Person
 from addressbook import AddressBook
 
-
 class Filesystem:
 
     def readFile(self):

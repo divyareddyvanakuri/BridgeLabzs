@@ -1,0 +1,26 @@
+{
+    "Patients": [
+        {
+            "P_Name": "xyz",
+            "P_ID": "1",
+            "MobileNumber": "567",
+            "Age": "89"
+        }
+    ],
+    "Doctors": [
+        {
+            "D_Name": "ABC",
+            "D_ID": "1",
+            "Specialization": "c",
+            "Availability": "Yes",
+            "Appoinment_available": 0
+        },
+        {
+            "D_Name": "1",
+            "D_ID": "1",
+            "Specialization": "1",
+            "Availability": "1",
+            "Appoinment_available": "1"
+        }
+    ]
+}
