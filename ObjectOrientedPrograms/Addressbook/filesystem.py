@@ -7,7 +7,7 @@ class Filesystem:
 
     def readFile(self):
         persons = []
-        with open('/home/user/Desktop/programming/ObjectOrientedPrograms/addressbookfile.json', 'r') as read_file:
+        with open('addressbookfile.json', 'r') as read_file:
             data = json.load(read_file)
         for person_dict in data['persons']:
             person_object = Person(person_dict)
