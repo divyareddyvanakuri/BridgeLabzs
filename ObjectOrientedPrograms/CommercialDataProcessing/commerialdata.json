@@ -1,0 +1,24 @@
+{
+    "Company": [
+        {
+            "Name": "TATA",
+            "Addresss": "Mumbai"
+        }
+    ],
+    "Shares": [
+        {
+            "share": "production",
+            "amount": 2000,
+            "stock": "23",
+            "symbol": "%"
+        }
+    ],
+    "Products": [
+        {
+            "product": "cars",
+            "count": 200,
+            "productionDate": "20jan2020",
+            "invesment": 200000000
+        }
+    ]
+}
