@@ -1,0 +1,66 @@
+class LoginApiview(generics.CreateAPIView):
+
+    # def get(self, request):
+    #     queryset = Person.objects.all()
+    #     serializer_class = LoginSerializer
+    #     return Response({"details": 'user'})
+
+    def post(self, request):
+        UserName = request.POST['user_name']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=UserName, password=password)
+        if not user:
+            raise forms.ValidationError("This user doesn't exist")
+        if not user.check_password(password):
+            raise forms.ValidationError("Incorrect password")
+        if not user.is_active:
+            raise forms.ValidationError("This user is not active")
+        return render(request, "index.html")
+
+
+# def homepage(request):
+#     return render(request, 'index.html')
+
+
+class CreateUserApiView(GenericAPIView):
+
+    def get(self, request):
+        return render(request, 'registerationpage.html')
+    serializer_class = RegistationSerializer
+
+    def post(self, request):
+        UserName = request.POST['user_name']
+        Email = request.POST['email_id']
+        Password = request.POST['password']
+        ConfirmPassword = request.POST['confirm_password']
+
+        if Password == ConfirmPassword:
+            user = User.objects.create(
+                username=UserName, email=Email, password=Password)
+            user.save()
+            current_site = get_current_site(request)
+            domain = current_site.domain
+            token = create_auth_token(user)
+            url = str(token)
+            surl = get_surl(url)
+            z = surl.split('/')
+
+            print("short_url", z[2])
+            subject = "please active your account"
+            msg = render_to_string('email_validation.html', {
+                'user': user.username,
+                'domain': domain,
+                'surl': z[2]
+            })
+            to_email = Email
+            mail = EmailMessage(subject, msg, to=[to_email])
+            mail.send()
+        print(msg)
+        return Response({"response": "please confirm your mail address", "token": token})
+
+
+def activate(request, surl):
+    print("surl :", surl)
+    return HttpResponse("your account is active")
+# User Login Application programming interface

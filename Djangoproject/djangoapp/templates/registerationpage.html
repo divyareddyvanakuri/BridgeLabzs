@@ -1,0 +1,25 @@
+{% block main %}
+<div id="register"> 
+    <form action="" method="post" >
+        {% csrf_token %}
+        <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="username">
+        </div>
+        <div>
+            <label for="email">Email Address</label>
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name='password'placeholder="password">
+        </div>
+        <div>
+            <label for="confirmpassword">confirmpassword</label>
+            <input type="password" name="confirmpassword" placeholder="ConfirmPassword">
+        </div>
+       
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
